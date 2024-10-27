@@ -23,12 +23,14 @@
         zephyr,console = &cdc_acm_uart;
         zmk,underglow = &led_strip;
         zmk,matrix-transform = &default_transform;
+        zmk,backlight = &backlight;
     };
 
 	left_encoder: encoder_left {
 		compatible = "alps,ec11";
 		label = "LEFT_ENCODER";
 		resolution = <4>;
+                 steps = <40>;
 		status = "disabled";
 	};
 
@@ -186,4 +188,10 @@
 
         color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
     };
+};
+&pwm0 {
+    status = "okay";
+    pinctrl-0 = <&pwm0_default>;
+    pinctrl-1 = <&pwm0_sleep>;
+    pinctrl-names = "default", "sleep";
 };

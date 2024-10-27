@@ -8,3 +8,5 @@ config BOARD_SOFLE_LEFT
 
 config BOARD_SOFLE_RIGHT
     bool
+
+
