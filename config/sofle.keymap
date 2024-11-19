@@ -78,7 +78,7 @@
 &trans      &kp GRAVE        &mkp LCLK       &mkp MCLK        &mkp RCLK        &mkp MB4           &mmv MOVE_DOWN   &kp PG_UP        &kp KP_N7        &kp KP_N8      &kp KP_N9         &kp KP_PLUS   &kp EQUAL
 &trans      &kp TILDE        &trans          &trans           &trans           &mkp MB5           &mmv MOVE_LEFT   &kp PG_DN        &kp KP_N4        &kp KP_N5      &kp KP_N6         &kp KP_ENTER  &kp RIGHT_BRACKET
 &trans      &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &rgb_ug RGB_SPI    &mmv MOVE_RIGHT  &rgb_ug RGB_BRI  &kp KP_N1        &kp KP_N2      &kp KP_N3         &trans        &trans
-&kp C_MUTE  &trans           &trans          &trans           &trans           &trans             &mkp LCLK        &trans           &KP KP_N0        &kp KP_DOT     &trans            &trans
+&kp C_MUTE  &trans           &trans          &trans           &trans           &trans             &mkp LCLK        &trans           &kp KP_N0        &kp KP_DOT     &trans            &trans
             >;
 
             display-name = "NUM";
