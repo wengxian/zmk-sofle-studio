@@ -23,13 +23,13 @@
 
 / {
     behaviors {
-        mmv {
+        &mmv {
             acceleration-exponent = <1>;      // 1
             time-to-max-speed-ms = <900>;    // 40
             delay-ms = <0>;                   // 0
         };
 
-        msc {
+        &msc {
             acceleration-exponent = <1>;      // 0
             time-to-max-speed-ms = <400>;      // 500
             delay-ms = <0>;                   //   10
