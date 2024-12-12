@@ -1,7 +1,7 @@
 layout: {qmk_keyboard: sofle/rev1}
 layers:
   LAYER0:
-  - {t: '$$mdi:keyboard-esc$$', h: '~'}
+  - $$mdi:keyboard-esc$$
   - {t: '1', s: '!'}
   - {t: '2', s: '@'}
   - {t: '3', s: '#'}
@@ -33,7 +33,7 @@ layers:
   - D
   - F
   - G
-  - '*'
+  - {t: '[', s: '{'}
   - H
   - J
   - K
@@ -46,18 +46,18 @@ layers:
   - C
   - V
   - B
-  - \
+  - {t: ']', s: '}'}
   - N
   - M
   - {t: ',', s: <}
   - {t: ., s: '>'}
   - {t: /, s: '?'}
   - {t: '$$mdi:keyboard-return$$', type: enter}
-  - F2
+  - {h: '$$mdi:arrow-down-bold$$', s: '$$mdi:bluetooth-connect$$'}
   - $$mdi:apple-keyboard-control$$
   - LEFT META
-  - $$mdi:apple-keyboard-option$$
   - $$mdi:keyboard-space$$
+  - $$mdi:apple-keyboard-option$$
   - layer1
   - {t: '=', s: +}
   - $$mdi:keyboard-space$$
