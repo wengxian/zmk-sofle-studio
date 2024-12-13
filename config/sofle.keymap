@@ -11,8 +11,6 @@
 #define U_MS_D &mmv MOVE_DOWN
 #define U_MS_L &mmv MOVE_LEFT
 #define U_MS_R &mmv MOVE_RIGHT
-#define ZMK_MOUSE_DEFAULT_MOVE_VAL 1200  //  600
-#define ZMK_MOUSE_DEFAULT_SCRL_VAL 20    // 10
 
 #define COMBO(NAME, BINDINGS, KEYPOS) \
   combo_##NAME { \
@@ -26,7 +24,7 @@
     behaviors {
         mmv {
             acceleration-exponent = <1>;      // 1
-            time-to-max-speed-ms = <1300>;    // 40
+            time-to-max-speed-ms = <1600>;    // 40
             delay-ms = <0>;                   // 0
         };
 
