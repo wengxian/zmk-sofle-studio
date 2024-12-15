@@ -1,6 +1,6 @@
 layout: {qmk_keyboard: sofle/rev1}
 layers:
-  LAYER0:
+  MAIN:
   - $$mdi:keyboard-esc$$
   - {t: '1', s: '!'}
   - {t: '2', s: '@'}
@@ -62,10 +62,10 @@ layers:
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - SETTING
   - $$mdi:keyboard-space$$
-  - layer1
+  - FUNCTION
   - $$mdi:apple-keyboard-shift$$
   - $$mdi:backspace-reverse-outline$$
-  layer1:
+  FUNCTION:
   - {t: '`', s: '~'}
   - F1
   - F2
@@ -177,8 +177,8 @@ layers:
   - RGB HUD
   - RGB SAD
   - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
-  - {t: LAYER0, h: toggle}
-  - {t: layer1, h: toggle}
+  - {t: MAIN, h: toggle}
+  - {t: FUNCTION, h: toggle}
   - {t: SETTING, h: toggle}
   - '&soft_off'
   - $$mdi:progress-download$$
@@ -198,4 +198,4 @@ layers:
 combos:
 - p: [53, 26]
   k: {t: '$$mdi:minus-circle-outline$$', type: none}
-  l: [layer1]
+  l: [FUNCTION]
