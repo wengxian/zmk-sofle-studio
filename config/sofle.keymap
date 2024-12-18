@@ -5,6 +5,7 @@
 #include <dt-bindings/zmk/mouse.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/rgb.h>
+#include "alias_sofle.h"
 
 #define ZMK_MOUSE_DEFAULT_MOVE_VAL 1200  // 600
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 20    // 10
@@ -20,6 +21,52 @@
 #define F_MOVE 1
 #define NUM 2
 #define CONFIG 3
+
+// The best home row mod (HRM) experience I've found comes with combining
+// a long "tapping term" with the new "require prior idle" setting in
+// ZMK's PR #1387. Using this feature, rapid typing does not generate
+// accidental modifiers, but when you've been idle for a certain amount
+// of time, you can easily trigger home row modifiers without waiting
+// forever and a day.
+//
+// For another layer of safety, I also use the "hold trigger key positions"
+// feature. This prevents the quick-tap behavior from firing with other
+// keys on the same side of the keyboard. In essense, to type Ctrl+A, I
+// must use the Ctrl key on the right half of the keyboard, since A is on
+// the left half of the keyboard.
+//
+// Combining these two settings is honestly magical. Home row mods have
+// never felt better.
+//
+// References:
+// * https://zmk.dev/docs/behaviors/hold-tap#require-prior-idle-ms
+// * https://zmk.dev/docs/behaviors/hold-tap#positional-hold-tap-and-hold-trigger-key-positions
+// * https://github.com/urob/zmk-config?tab=readme-ov-file#timeless-homerow-mods
+
+// Tap/hold behavior style
+// "holdiepreferred", "balanced", "tapiepreferred", "tap-unless-interrupted"
+#define HRM_BEHAVIOR "balanced"
+
+// This is intentonally very large because of the interaction with
+// require-prior-idle-ms. Basically, holding a key longer than this
+// delay allows combos that don't respect the hold-trigger-key-positions
+// setting, so it needs to be pretty large to prevent unintentional
+// holds.
+#define HRM_TAPPING_TERM_MS 280
+
+// If pressing any other key before a HRM key within this window,
+// the tap/hold configuration will be completely ignored and the
+// key will always be treated as a tap. This prevents a
+// long tapping-term-ms from feeling sluggish.
+// Introduced in ZMK PR #1387
+#define HRM_REQUIRE_PRIOR_IDLE_MS 150
+
+// Double-tap the key within this window to hold that keystroke
+// (instead of holding the modifier, press and hold the key, like
+// jjjjjjjjjjjjjjjjjjjjjjjjjjjjj)
+#define HRM_QUICK_TAP_MS 175
+
+
 
 / {
     behaviors {
@@ -44,16 +91,43 @@
         tap-ms = <30>;
     };
 
+    hml: homerow_mods_left {
+        compatible = "zmk,behavior-hold-tap";
+        label = "HOMEROW_MODS_LEFT";
+        flavor = HRM_BEHAVIOR;
+        tapping-term-ms = <HRM_TAPPING_TERM_MS>;
+        quick-tap-ms = <HRM_QUICK_TAP_MS>;
+        global-quick-tap-ms = <150>;   // requires PR #1387
+        hold-trigger-key-positions = <KEYS_R KEYS_T>;
+        hold-trigger-on-release;       // requires PR #1423
+        #binding-cells = <2>;
+        bindings = <&kp>, <&kp>;
+    };
+
+    hmr: homerow_mods_right {
+        compatible = "zmk,behavior-hold-tap";
+        label = "HOMEROW_MODS_RIGHT";
+        flavor = HRM_BEHAVIOR;
+        tapping-term-ms = <HRM_TAPPING_TERM_MS>;
+        quick-tap-ms = <HRM_QUICK_TAP_MS>;
+        global-quick-tap-ms = <150>;   // requires PR #1387
+        hold-trigger-key-positions = <KEYS_L KEYS_T>;
+        hold-trigger-on-release;       // requires PR #1423
+        #binding-cells = <2>;
+        bindings = <&kp>, <&kp>;
+    };
+
+
     keymap {
         compatible = "zmk,keymap";
 
         DEFAULT {
             bindings = <
-&kp ESC     &kp N1     &kp N2        &kp N3        &kp N4   &kp N5       &kp UP_ARROW     &kp N6     &kp N7     &kp N8     &kp N9           &kp N0      &kp MINUS
-&kp TAB     &kp Q      &kp W         &kp E         &kp R    &kp T        &kp DOWN_ARROW   &kp Y      &kp U      &kp I      &kp O            &kp P       &kp EQUAL
-&kp CAPS    &kp A      &kp S         &kp D         &kp F    &kp G        &kp LEFT_ARROW   &kp H      &kp J      &kp K      &kp L            &kp SEMI    &kp APOS
-&kp LSHFT   &kp Z      &kp X         &kp C         &kp V    &kp B        &kp RIGHT_ARROW  &kp N      &kp M      &kp COMMA  &kp DOT          &kp FSLH    &kp RSHFT
-&kp C_MUTE  &kp LCTRL  &kp LEFT_GUI  &mo 2         &kp BSPC &kp DEL      &kp ENTER        &kp ENTER  &kp SPACE  &mo 1      &mo 3            &kp DELETE
+&kp ESC     &kp N1        &kp N2       &kp N3         &kp N4           &kp N5       &kp UP_ARROW     &kp N6     &kp N7          &kp N8          &kp N9          &kp N0          &kp MINUS
+&kp TAB     &kp Q         &kp W        &kp E          &kp R            &kp T        &kp DOWN_ARROW   &kp Y      &kp U           &kp I           &kp O           &kp P           &kp EQUAL
+&kp CAPS    &hml LGUI A   &hml LALT S  &hml LCTRL D   &hml LSHFT F     &kp G        &kp LEFT_ARROW   &kp H      &hmr RSHFT J    &hmr RCTRL K    &hmr RALT L     &hmr RGUI SEMI  &kp APOS
+&kp LSHFT   &kp Z         &kp X        &kp C          &kp V            &kp B        &kp RIGHT_ARROW  &kp N      &kp M           &kp COMMA       &kp DOT         &kp FSLH        &kp RSHFT
+&kp C_MUTE  &kp LCTRL     &kp LEFT_GUI &mo 2          &kp BSPC         &kp DEL      &kp ENTER        &kp ENTER  &kp SPACE       &mo 1           &mo 3           &kp DELETE
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
