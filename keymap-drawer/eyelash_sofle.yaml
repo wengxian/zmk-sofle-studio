@@ -187,15 +187,15 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
-  - {t: Space_Lock, h: toggle, type: held}
+  - {t: Space, h: toggle, type: held}
   - $$mdi:mouse-left-click-outline$$
   - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  Space_Lock:
-  - {t: '$$mdi:transfer$$', type: trans}
+  Space:
+  - {t: Space, h: toggle}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
