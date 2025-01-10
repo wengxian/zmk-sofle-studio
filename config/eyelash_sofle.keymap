@@ -82,7 +82,7 @@
 &trans           &bt BT_CLR       &bt BT_CLR_ALL   &out OUT_BLE     &out OUT_USB     &soft_off       &mmv MOVE_DOWN   &trans  &trans  &trans  &trans  &trans  &trans
 &rgb_ug RGB_TOG  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI  &rgb_ug RGB_SPI  &trans          &mmv MOVE_LEFT   &trans  &trans  &trans  &trans  &trans  &trans
 &rgb_ug RGB_EFF  &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &rgb_ug RGB_SPD  &trans          &mmv MOVE_RIGHT  &trans  &trans  &trans  &trans  &trans  &trans
-&trans           &trans           &trans           &trans           &trans           &trans          &mkp LCLK        &trans  &trans  &trans  &trans  &trans
+&trans           &trans           &trans           &trans           &trans           &tog 3          &mkp LCLK        &trans  &trans  &trans  &trans  &trans
             >;
 
             sensor-bindings = <&scroll_encoder>;
