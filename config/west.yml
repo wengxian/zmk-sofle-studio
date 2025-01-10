@@ -22,8 +22,5 @@ manifest:
       remote: zmkfirmware
       revision: main
       import: app/west.yml
-    - name: niceview-mod
-      remote: namarimizu
-      revision: main
   self:
     path: config
