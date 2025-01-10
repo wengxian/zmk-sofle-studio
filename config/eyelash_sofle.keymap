@@ -65,7 +65,7 @@
 
         Ex {
             bindings = <
-&trans      &kp F1        &kp F2         &kp F3            &kp F4             &kp F5          &mmv MOVE_UP     &kp F6     &kp F7    &kp F8      &kp F9     &kp F10           &trans
+&trans      &kp F1        &kp F2         &kp F3            &kp F4             &kp F5          &mmv MOVE_UP     &kp F6     &kp F7    &kp F8      &kp F9     &kp F10           &mo 2
 &trans      &kp NUMBER_6  &kp NUMBER_7   &kp NUMBER_8      &kp NUMBER_9       &kp NUMBER_0    &mmv MOVE_DOWN   &kp PG_UP  &kp HOME  &kp UP      &kp END    &kp MINUS         &kp EQUAL
 &trans      &kp TILDE     &kp UNDER      &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp PLUS        &mmv MOVE_LEFT   &kp PG_DN  &kp LEFT  &kp DOWN    &kp RIGHT  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
 &trans      &kp GRAVE     &kp MINUS      &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp EQUAL       &mmv MOVE_RIGHT  &trans     &trans    &kp INSERT  &kp F11    &kp F12           &kp PRINTSCREEN
