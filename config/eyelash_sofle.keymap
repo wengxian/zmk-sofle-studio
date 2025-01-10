@@ -100,16 +100,19 @@
             >;
 
             sensor-bindings = <&scroll_encoder>;
+            label = "Misc";
         };
 
-        Space_Lock {
+        Space {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans       &trans  &trans       &trans  &trans  &trans  &trans  &trans
+&tog 3  &trans  &trans  &trans  &trans  &trans       &trans  &trans       &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans       &trans  &trans       &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans       &trans  &trans       &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans       &trans  &trans       &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &mo 1   &kp SPACE    &trans  &lt 1 SPACE  &trans  &trans  &trans  &trans
             >;
+
+            label = "Space";
         };
 
         layer_4 {
