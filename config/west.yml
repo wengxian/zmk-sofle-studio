@@ -10,6 +10,8 @@ manifest:
       url-base: https://github.com/GPeye
     - name: namarimizu
       url-base: https://github.com/Namarimizu
+    - name: m165437
+      url-base: https://github.com/M165437 #new entry
       
   projects:
     - name: eyelash_sofle
@@ -22,5 +24,8 @@ manifest:
       remote: zmkfirmware
       revision: main
       import: app/west.yml
+    - name: nice-view-gem
+      remote: m165437
+      revision: main
   self:
     path: config
