@@ -52,11 +52,11 @@
 
         base {
             bindings = <
-&trans      &trans          &trans          &trans              &trans            &trans     &kp UP_ARROW     &trans     &trans             &trans               &trans           &trans                      &trans
-&trans      &kp Q           &kp W           &kp E               &kp R             &kp T      &kp DOWN_ARROW   &kp Y      &kp U              &kp I                &kp O            &kp P                       &trans
-&trans      &mt LEFT_GUI A  &mt S LEFT_ALT  &mt D LEFT_CONTROL  &mt F LEFT_SHIFT  &kp G      &kp LEFT_ARROW   &kp H      &mt J RIGHT_SHIFT  &mt K RIGHT_CONTROL  &mt L RIGHT_ALT  &mt SINGLE_QUOTE RIGHT_GUI  &trans
-&trans      &kp Z           &kp X           &kp C               &kp V             &kp B      &kp RIGHT_ARROW  &kp N      &kp M              &kp COMMA            &kp DOT          &kp FSLH                    &trans
-&kp C_MUTE  &trans          &trans          &kp ESCAPE          &kp SPACE         &kp TAB    &kp ENTER        &kp ENTER  &kp BACKSPACE      &kp DELETE           &trans           &trans
+&kp GRAVE      &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5    &kp UP_ARROW     &kp NUMBER_6  &kp NUMBER_7     &kp N8        &kp N9    &kp N0       &kp BACKSPACE
+&kp TAB        &kp Q         &kp W         &kp E         &kp R         &kp T           &kp DOWN_ARROW   &kp Y         &kp U            &kp I         &kp O     &kp P        &kp BSLH
+&mt ESC LCTRL  &kp A         &kp S         &kp D         &kp F         &kp G           &kp LEFT_ARROW   &kp H         &kp J            &kp K         &kp L     &kp SEMI     &kp SQT
+&kp LSHFT      &lt 3 Z       &kp X         &kp C         &kp V         &kp B           &kp RIGHT_ARROW  &kp N         &kp M            &kp COMMA     &kp DOT   &lt 3 SLASH  &kp RSHFT
+&kp C_MUTE     &kp LGUI      &kp LALT      &lt 4 ESCAPE  &lt 1 SPACE   &lt 2 TAB       &kp ENTER        &lt 6 ENTER   &lt 5 BACKSPACE  &lt 7 DELETE  &kp RALT  &kp RGUI
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
@@ -78,11 +78,11 @@
 
         mouse {
             bindings = <
-&trans  &trans    &trans    &trans     &trans     &trans    &trans  &trans          &trans          &trans        &trans           &trans     &trans
-&trans  &trans    &trans    &trans     &trans     &trans    &trans  &kp LS(LG(Z))   &kp LG(V)       &kp LG(C)     &kp LG(X)        &kp LG(Z)  &trans
-&trans  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans    &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &trans     &trans
-&trans  &trans    &trans    &trans     &trans     &trans    &trans  &trans          &trans          &trans        &trans           &trans     &trans
-&trans  &trans    &trans    &trans     &trans     &trans    &trans  &mkp RCLK       &mkp LCLK       &mkp MCLK     &trans           &trans
+&trans  &trans    &trans    &trans     &trans     &trans    &mmv MOVE_UP     &trans          &trans          &trans        &trans           &trans     &trans
+&trans  &trans    &trans    &trans     &trans     &trans    &mmv MOVE_DOWN   &kp LS(LG(Z))   &kp LG(V)       &kp LG(C)     &kp LG(X)        &kp LG(Z)  &trans
+&trans  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans    &mmv MOVE_LEFT   &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &trans     &trans
+&trans  &trans    &trans    &trans     &trans     &trans    &mmv MOVE_RIGHT  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &trans     &trans
+&trans  &trans    &trans    &trans     &trans     &trans    &mkp LCLK        &mkp RCLK       &mkp LCLK       &mkp MCLK     &trans           &trans
             >;
 
             label = "Mouse";
@@ -126,11 +126,11 @@
 
         sym {
             bindings = <
-&trans  &trans          &trans           &trans                &trans                 &trans                   &trans  &trans  &trans     &trans             &trans    &trans    &trans
-&trans  &kp LEFT_BRACE  &kp AMPERSAND    &kp ASTERISK          &kp LEFT_PARENTHESIS   &kp RIGHT_PARENTHESIS    &trans  &trans  &trans     &trans             &trans    &trans    &trans
-&trans  &kp COLON       &kp DOLLAR       &kp PERCENT           &kp CARET              &kp PLUS                 &trans  &trans  &kp RSHFT  &kp RIGHT_CONTROL  &kp RALT  &kp RGUI  &trans
-&trans  &kp TILDE       &kp EXCLAMATION  &kp AT_SIGN           &kp HASH               &kp PIPE                 &trans  &trans  &trans     &trans             &trans    &trans    &trans
-&trans  &trans          &trans           &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp UNDERSCORE           &trans  &trans  &trans     &trans             &trans    &trans
+&trans  &trans          &trans           &trans                &trans                 &trans             &trans  &trans  &trans     &trans             &trans    &trans    &trans
+&trans  &kp LEFT_BRACE  &kp AMPERSAND    &kp ASTERISK          &kp LEFT_PARENTHESIS   &kp RIGHT_BRACE    &trans  &trans  &trans     &trans             &trans    &trans    &trans
+&trans  &kp COLON       &kp DOLLAR       &kp PERCENT           &kp CARET              &kp PLUS           &trans  &trans  &kp RSHFT  &kp RIGHT_CONTROL  &kp RALT  &kp RGUI  &trans
+&trans  &kp TILDE       &kp EXCLAMATION  &kp AT_SIGN           &kp HASH               &kp PIPE           &trans  &trans  &trans     &trans             &trans    &trans    &trans
+&trans  &trans          &trans           &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp UNDERSCORE     &trans  &trans  &trans     &trans             &trans    &trans
             >;
 
             label = "Sym";
